@@ -1,6 +1,6 @@
 # Tutorial: Building a Modern App Using React
 
-Welcome to this tutorial on building a modern app using React. In this tutorial, I will following various topics to help myself get started with React development following a Programming with Mosh tutorial.
+Welcome to this tutorial on building a modern app using React. In this tutorial, I will be following various topics discussed in a  Programming with Mosh tutorial to help myself get started with React development.
 
 ## Table of Contents
 
