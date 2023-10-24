@@ -28,9 +28,3 @@ This is a tutorial on how to build a modern app using React. Topics covered in t
 - Exercise: Showing an Alert
 
 For detailed instructions and examples, you can watch the video tutorial on YouTube: [Watch the Tutorial](https://www.youtube.com/watch?v=SqcY0GlETPk)
-
-## Video Tutorial
-
-For detailed instructions and examples, you can watch the video tutorial on YouTube: [Watch the Tutorial](https://www.youtube.com/watch?v=SqcY0GlETPk)
-
-Let's get started with React development!
