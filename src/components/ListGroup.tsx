@@ -1,11 +1,10 @@
-import { Fragment } from 'react';
-import { MouseEvent } from 'react';
+import { Fragment, useState } from 'react';
 
 function ListGroup() {
   let fruits = ['Apple', 'Banana', 'Cherry', 'Pineapple', 'Elderberry'];
-
-  //Event Handler
-  let handleClick = (event: MouseEvent) => console.log(event); //type annotation in TS
+  //This is a state hook
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [name, setName] = useState('');
 
   const getMessage = () => {
     fruits.length === 0 && <p>No fruit found</p>;
@@ -15,8 +14,18 @@ function ListGroup() {
       <h1>List</h1>
       {getMessage()}
       <ul className="list-group">
-        {fruits.map((fruit) => (
-          <li className="list-group-item" key={fruit} onClick={handleClick}>
+        {fruits.map((fruit, index) => (
+          <li
+            className={
+              selectedIndex === index
+                ? 'list-group-item active'
+                : 'list-group-item'
+            }
+            key={fruit}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
+          >
             {fruit}
           </li>
         ))}
