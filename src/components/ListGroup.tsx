@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
+import { MouseEvent } from 'react';
 
 function ListGroup() {
-  let fruits = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry'];
+  let fruits = ['Apple', 'Banana', 'Cherry', 'Pineapple', 'Elderberry'];
 
-  fruits = [];
+  //Event Handler
+  let handleClick = (event: MouseEvent) => console.log(event); //type annotation in TS
 
-  //const message = fruits.length === 0 ? <p>No fruit found</p> : null
-  //or this below either do the same thing only thing is it would be {message} instead
   const getMessage = () => {
     fruits.length === 0 && <p>No fruit found</p>;
   };
@@ -16,7 +16,9 @@ function ListGroup() {
       {getMessage()}
       <ul className="list-group">
         {fruits.map((fruit) => (
-          <li key={fruit}>{fruit}</li>
+          <li className="list-group-item" key={fruit} onClick={handleClick}>
+            {fruit}
+          </li>
         ))}
       </ul>
     </>
