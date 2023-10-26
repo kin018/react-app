@@ -1,32 +1,36 @@
 import { Fragment, useState } from 'react';
 
-function ListGroup() {
-  let fruits = ['Apple', 'Banana', 'Cherry', 'Pineapple', 'Elderberry'];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
+
+function ListGroup({ items, heading }: ListGroupProps) {
   //This is a state hook
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [name, setName] = useState('');
 
   const getMessage = () => {
-    fruits.length === 0 && <p>No fruit found</p>;
+    items.length === 0 && <p>No item found</p>;
   };
   return (
     <>
-      <h1>List</h1>
+      <h1>{heading}</h1>
       {getMessage()}
       <ul className="list-group">
-        {fruits.map((fruit, index) => (
+        {items.map((item, index) => (
           <li
             className={
               selectedIndex === index
                 ? 'list-group-item active'
                 : 'list-group-item'
             }
-            key={fruit}
+            key={item}
             onClick={() => {
               setSelectedIndex(index);
             }}
           >
-            {fruit}
+            {item}
           </li>
         ))}
       </ul>
